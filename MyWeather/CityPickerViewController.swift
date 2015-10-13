@@ -94,5 +94,11 @@ class CityPickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error finding location: \(error.localizedDescription)")
+        // show error alert
+        let errorAlert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+        errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            errorAlert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        presentViewController(errorAlert, animated: true, completion: nil)
     }
 }
