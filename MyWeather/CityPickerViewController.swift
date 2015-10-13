@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class CityPickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
+class CityPickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, LocationServiceDelegate {
 
     var selectedCity: Int?
     var location: CLLocation?
@@ -18,14 +18,13 @@ class CityPickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    let locationManager = CLLocationManager()
+    let locationService = LocationService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationService.delegate = self
 
         if selectedCity != nil {
             pickerView.selectRow(selectedCity!, inComponent: 0, animated: false)
@@ -39,8 +38,7 @@ class CityPickerViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     @IBAction func definedLocation(sender: AnyObject) {
         // requestLocation
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        locationService.requestLocation()
     }
 
     // MARK: - Picker View Data Source
@@ -70,30 +68,25 @@ class CityPickerViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
 
-    // MARK: - Location Manager Delegate
+    // MARK: - Location Service Delegate
 
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let locationFirst = locations.first {
-            location = locationFirst
-//            locationLabel.text = "\(location)"
-            locationLabel.text = String(format: "lon:%f, lat:%f", arguments: [location!.coordinate.longitude, location!.coordinate.latitude])
+    func locationDidUpdate(service: LocationService, location: CLLocation) {
+
+//        locationLabel.text = "\(location)"
+        locationLabel.text = String(format: "lat: %f, lon: %f", arguments: [location.coordinate.latitude, location.coordinate.longitude])
             
-            let weatherData = WeatherData()
-            //print(weatherData.getCityByLocation(37.62, lat: 55.75))
-            if let cityName = weatherData.getCityByLocation(location!) {
-                cityLabel.text = cityName
-                if let cityIndex = WeatherData.cities.indexOf(cityName) {
-                    selectedCity = cityIndex
-                    pickerView.selectRow(selectedCity!, inComponent: 0, animated: true)
-                }
-                
+        let weatherData = WeatherData()
+        //print(weatherData.getCityByLocation(37.62, lat: 55.75))
+        if let cityName = weatherData.getCityByLocation(location) {
+            cityLabel.text = cityName
+            if let cityIndex = WeatherData.cities.indexOf(cityName) {
+                selectedCity = cityIndex
+                pickerView.selectRow(selectedCity!, inComponent: 0, animated: true)
             }
-
         }
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Error finding location: \(error.localizedDescription)")
+    func didFailWithError(service: LocationService,  error: NSError) {
         // show error alert
         let errorAlert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
         errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in

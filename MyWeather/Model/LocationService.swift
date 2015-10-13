@@ -11,6 +11,7 @@ import CoreLocation
 
 protocol LocationServiceDelegate {
     func locationDidUpdate(service: LocationService, location: CLLocation)
+    func didFailWithError(service: LocationService, error: NSError)
 }
 
 class LocationService: NSObject, CLLocationManagerDelegate {
@@ -42,5 +43,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error finding location: \(error.localizedDescription)")
+        delegate?.didFailWithError(self, error: error)
     }
 }
