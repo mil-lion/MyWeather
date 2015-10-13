@@ -1,0 +1,72 @@
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "06Z-LJ-IOD"; */
+"06Z-LJ-IOD.text" = "Detail";
+
+/* Class = "UILabel"; text = "99 %"; ObjectID = "1eA-zr-cdU"; */
+"1eA-zr-cdU.text" = "99 %";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "1yL-08-C94"; */
+"1yL-08-C94.text" = "Title";
+
+/* Class = "UILabel"; text = "Ночь"; ObjectID = "8An-9a-JqM"; */
+"8An-9a-JqM.text" = "Ночь";
+
+/* Class = "UILabel"; text = "Давление"; ObjectID = "AqO-Iv-iY2"; */
+"AqO-Iv-iY2.text" = "Давление";
+
+/* Class = "UILabel"; text = "max"; ObjectID = "DuQ-9O-3c0"; */
+"DuQ-9O-3c0.text" = "max";
+
+/* Class = "UILabel"; text = "Скорость"; ObjectID = "DzA-JV-yFF"; */
+"DzA-JV-yFF.text" = "Скорость";
+
+/* Class = "UILabel"; text = "Утро"; ObjectID = "ExM-Ad-eKO"; */
+"ExM-Ad-eKO.text" = "Утро";
+
+/* Class = "UILabel"; text = "999 mmHg"; ObjectID = "GSM-qA-lsm"; */
+"GSM-qA-lsm.text" = "999 mmHg";
+
+/* Class = "UILabel"; text = "-99.99 °C"; ObjectID = "K4O-Xk-Drp"; */
+"K4O-Xk-Drp.text" = "-99.99 °C";
+
+/* Class = "UILabel"; text = "-99.99 °C"; ObjectID = "Qzd-fa-1SL"; */
+"Qzd-fa-1SL.text" = "-99.99 °C";
+
+/* Class = "UINavigationItem"; title = "City"; ObjectID = "R0F-Zv-U1A"; */
+"R0F-Zv-U1A.title" = "City";
+
+/* Class = "UILabel"; text = "-99.99 °C"; ObjectID = "SK2-PU-FWe"; */
+"SK2-PU-FWe.text" = "-99.99 °C";
+
+/* Class = "UILabel"; text = "999 m/s"; ObjectID = "Sh8-50-tBb"; */
+"Sh8-50-tBb.text" = "999 m/s";
+
+/* Class = "UILabel"; text = "День"; ObjectID = "Teh-Yj-52k"; */
+"Teh-Yj-52k.text" = "День";
+
+/* Class = "UILabel"; text = "-99.99 °C"; ObjectID = "XPN-KB-NTp"; */
+"XPN-KB-NTp.text" = "-99.99 °C";
+
+/* Class = "UILabel"; text = "-99.99 °C"; ObjectID = "b7K-Tt-rGA"; */
+"b7K-Tt-rGA.text" = "-99.99 °C";
+
+/* Class = "UILabel"; text = "-99.99 °C"; ObjectID = "cEV-b6-Q8O"; */
+"cEV-b6-Q8O.text" = "-99.99 °C";
+
+/* Class = "UILabel"; text = "Влажность"; ObjectID = "jJg-MM-Az1"; */
+"jJg-MM-Az1.text" = "Влажность";
+
+/* Class = "UILabel"; text = "Вечер"; ObjectID = "kdy-UW-LCw"; */
+"kdy-UW-LCw.text" = "Вечер";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nQX-Gd-5Fq"; */
+"nQX-Gd-5Fq.text" = "Label";
+
+/* Class = "UILabel"; text = "min"; ObjectID = "pNw-kQ-65v"; */
+"pNw-kQ-65v.text" = "min";
+
+/* Class = "UINavigationItem"; title = "Выбор города"; ObjectID = "qJH-e8-TcJ"; */
+"qJH-e8-TcJ.title" = "Выбор города";
+
+/* Class = "UILabel"; text = "-99.99 °C"; ObjectID = "yn8-MG-BUV"; */
+"yn8-MG-BUV.text" = "-99.99 °C";
