@@ -87,11 +87,12 @@ class CityPickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func didFailWithError(service: LocationService,  error: NSError) {
+        print(error.localizedDescription)
         // show error alert
-        let errorAlert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
-        errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-            errorAlert.dismissViewControllerAnimated(true, completion: nil)
-        }))
-        presentViewController(errorAlert, animated: true, completion: nil)
+//        let errorAlert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+//        errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+//            errorAlert.dismissViewControllerAnimated(true, completion: nil)
+//        }))
+//        presentViewController(errorAlert, animated: true, completion: nil)
     }
 }

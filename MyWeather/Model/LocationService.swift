@@ -28,8 +28,17 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     }
     
     func requestLocation() {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        if #available(iOS 8.0, *) {
+            locationManager.requestWhenInUseAuthorization()
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 9.0, *) {
+            locationManager.requestLocation()
+        } else {
+            // Fallback on earlier versions
+            locationManager.startUpdatingLocation()
+        }
     }
 
     // MARK: - CoreLocation Location Manager Delegate

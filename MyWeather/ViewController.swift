@@ -142,8 +142,16 @@ class ViewController: UIViewController, WeatherDataDelegate, UITableViewDataSour
 //        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let myCalendar = NSCalendar.currentCalendar()
         let today = NSDate()
-        let tomorrow = myCalendar.dateByAddingUnit([.Day], value: offset, toDate: today, options: [])!
-        return getDayOfWeek(tomorrow)
+        var tomorrow: NSDate?
+        if #available(iOS 8.0, *) {
+            tomorrow = myCalendar.dateByAddingUnit([.Day], value: offset, toDate: today, options: [])
+        } else {
+            // Fallback on earlier versions
+            let components = NSDateComponents()
+            components.day = offset
+            tomorrow = myCalendar.dateByAddingComponents(components, toDate: today, options: [])
+        }
+        return getDayOfWeek(tomorrow!)
     }
     
     // MARK: - Table View Data Source
